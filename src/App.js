@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import HomeScreen from './pages/HomeScreen'
+import LoginScreen from './pages/LoginScreen'
+import Dashboard from './pages/Dashboard'
+import AddIncome from './pages/AddIncome'
+import AddOutcome from './pages/AddOutcome'
+import DetailPage from './pages/DetailPage'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className='App relative w-full '>
+        <NavBar />
+        <main style={{}} className='bg-gray-200 h-auto'>
+          <Route path='/' component={HomeScreen} exact />
+          <Route path='/login' component={LoginScreen} />
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/addIncome' component={AddIncome} />
+          <Route path='/addOutcome' component={AddOutcome} />
+          <Route path='/rincian/:tanggal' component={DetailPage} />
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
