@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+
 import BackButton from '../components/BackButton'
 import CardDetail from '../components/CardDetail'
-import data from '../data'
 const AddIncome = () => {
   const [inputData, setInputData] = useState([])
   const [nominal, setNominal] = useState(0)

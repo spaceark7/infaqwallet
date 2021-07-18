@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import CardDetail from '../components/CardDetail'
@@ -9,11 +9,6 @@ const AddIncome = () => {
   const [description, setDescription] = useState()
   const [date, setDate] = useState()
   const [isDisabled, setIsDisabled] = useState(true)
-
-  useEffect(() => {
-    let cond = document.querySelector('textarea').value
-    console.log('cons is: ', cond)
-  }, [])
 
   const handleSaveSubmit = (e) => {
     e.preventDefault()
@@ -26,8 +21,10 @@ const AddIncome = () => {
     }
     if (inputData.length !== 0) {
       setInputData((inputData) => [...inputData, obj])
+      setDescription('')
     } else {
       setInputData((inputData) => [obj])
+      setDescription('')
     }
 
     document.querySelector('.detail-form').reset()
@@ -100,6 +97,7 @@ const AddIncome = () => {
               name='Tanggal'
               id='Tanggal'
               onChange={(e) => setDate(e.target.value)}
+              required
             />
           </div>
           <div className='mb-4'>
@@ -112,6 +110,7 @@ const AddIncome = () => {
               name='Uang'
               id='Uang'
               onChange={(e) => setNominal(e.target.valueAsNumber)}
+              required
             />
           </div>
           <div className='mb-4'>
@@ -121,9 +120,12 @@ const AddIncome = () => {
             <textarea
               className='mt-0 block text-lg font-semibold w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-700'
               rows='3'
+              required
               onChange={(e) => {
                 setDescription(e.target.value)
-                setIsDisabled(false)
+                e.target.value === '' || null
+                  ? setIsDisabled(true)
+                  : setIsDisabled(false)
               }}
             ></textarea>
           </div>
@@ -133,4 +135,13 @@ const AddIncome = () => {
               type='submit'
               disabled={isDisabled}
             >
-              SI
+              SIMPAN
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default AddIncome

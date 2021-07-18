@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import data from '../data'
-import CardDetail from '../components/CardDetail'
-import BackButton from '../components/BackButton'
+
 import NumberFormat from 'react-number-format'
 
 const DetailPage = ({ match }) => {
