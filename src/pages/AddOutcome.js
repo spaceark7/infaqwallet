@@ -38,7 +38,7 @@ const AddIncome = () => {
         <BackButton destination={'/dashboard'} />
       </div>
       <div className='w-full '>
-        <h2 className='px-3 py-2 bg-red-600 rounded-xl text-white w-2/3 font-bold text-xl'>
+        <h2 className='px-3 py-2 bg-red-600 rounded-md text-white w-2/3 font-bold text-xl'>
           Rekapan Transaksi Pengeluaran
         </h2>
       </div>

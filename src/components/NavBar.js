@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(false)
   useEffect(() => {
     const toggle = document.querySelector('.mob-menu')
     const menuBlock = document.querySelector('.menu-block')
@@ -30,19 +30,58 @@ const NavBar = () => {
 
   return (
     <>
-      <header className='sticky top-0 w-full bg-blue-700 h-16 z-10 '>
+      <header className='sticky top-0 w-full bg-blue-700 h-16 lg:h-32 lg:px-6 z-10 '>
         <div className='container mx-auto flex h-full'>
           <div className='relative items-center align-middle mr-auto ml-3.5 flex'>
             <img
-              className='object-contain h-7 mr-2 fill-current text-white '
+              className='object-contain lg:h-14 h-7 mr-2 fill-current text-white '
               src='assets/icons/wallet.svg'
               alt='wallet'
             />
-            <h2 className=' text-white items-center align-middle'>
+            <h2 className=' text-white items-center align-middle lg:font-bold lg:text-xl'>
               Dompet Infaq
             </h2>
           </div>
-          <div className='mob-menu ml-auto p-8  flex items-center align-middle'>
+          <div className='hidden lg:grid  grid p-2 pr-4 grid-flow-col md:grid lg:space-x-12 md:space-x-7  lg:text-3xl'>
+            <Link
+              className='text-white flex justify-center items-center font-bold text-lg lg:text-2xl text-center w-full w-11/12 block menu-item'
+              to='/'
+            >
+              <div className='w-full max-w-xl min-w-full'>Home</div>
+            </Link>
+
+            {isLogin && (
+              <Link
+                to='/dashboard'
+                className='text-white flex justify-center items-center font-bold text-lg lg:text-2xl text-center menu-item'
+              >
+                Dashboard
+              </Link>
+            )}
+
+            <Link
+              to='/tentang'
+              className='text-white flex justify-center items-center font-bold text-lg lg:text-2xl text-center menu-item'
+            >
+              Tentang
+            </Link>
+            {isLogin ? (
+              <Link
+                to='/'
+                className='text-white flex justify-center items-center font-bold text-lg lg:text-2xl text-center menu-item'
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link
+                to='/login'
+                className='text-white flex justify-center items-center font-bold text-lg lg:text-2xl text-center menu-item'
+              >
+                Login
+              </Link>
+            )}
+          </div>
+          <div className='mob-menu ml-auto p-8 md:hidden  flex items-center align-middle'>
             <i className='menu-bar fa fa-bars text-white text-xl'></i>
           </div>
         </div>
