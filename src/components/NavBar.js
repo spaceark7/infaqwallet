@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState(true)
   useEffect(() => {
     const toggle = document.querySelector('.mob-menu')
     const menuBlock = document.querySelector('.menu-block')

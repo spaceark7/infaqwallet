@@ -37,7 +37,7 @@ const AddIncome = () => {
   }
 
   return (
-    <div className='px-7 py-5'>
+    <div className='px-7 py-5 container mx-auto '>
       <div className='mb-5'>
         <BackButton destination={'/dashboard'} />
       </div>
@@ -63,9 +63,9 @@ const AddIncome = () => {
       </form>
 
       {inputData.length === 0 ? (
-        <div>Kosong</div>
+        <div>SIlahkan Isi Data</div>
       ) : (
-        <div className='mt-2 mb-10'>
+        <div className='mt-2 mb-10 container mx-auto'>
           <h2 className='text-lg font-bold text-gray-500'>Data Tersimpan</h2>
 
           {inputData.map((data, index) => (
@@ -80,8 +80,8 @@ const AddIncome = () => {
         </div>
       )}
 
-      <div className='container grid-cols-1'>
-        <h2 className='text-2xl font-semibold text-center'>Rincian</h2>
+      <div className='container grid-cols-1 mx-auto'>
+        <h2 className='text-2xl font-semibold text-center pb-8'>Rincian</h2>
         <form
           onSubmit={handleSaveSubmit}
           className='bg-white detail-form rounded-md shadow-md p-4 py-6'

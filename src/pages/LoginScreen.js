@@ -32,7 +32,7 @@ const LoginScreen = ({ history }) => {
               <div className='w-2/6 h-full flex align-middle items-center   '>
                 <form
                   onSubmit={HandleSubmit}
-                  className='w-full  h-4/6  p-3  md:mx-auto md:shadow-xl md:rounded-xl  bg-white shadow-md pb-7 rounded-t-xl '
+                  className='relative w-full  h-4/6 md:h-full  p-3  md:mx-auto md:shadow-xl md:rounded-xl  bg-white shadow-md pb-7 rounded-t-xl '
                 >
                   <h2 className='text-center font-bold text-2xl xl:text-4xl mb-8'>
                     Login
@@ -45,7 +45,7 @@ const LoginScreen = ({ history }) => {
                       Alamat Email
                     </label>
                     <input
-                      className='block w-full lg:text-xl bg-gray-200 rounded-full  px-3 border-0  border-gray-200 focus:ring-0  focus:border-blue-700'
+                      className='block w-full text-lg bg-gray-200 rounded-full  px-3 border-0  border-gray-200 focus:ring-0  focus:border-blue-700'
                       type='email'
                       name='emailAddress'
                       id='emailAddress'
@@ -65,7 +65,7 @@ const LoginScreen = ({ history }) => {
                     </label>
                     <span className='flex rounded-full  px-3 border-[0.5] bg-gray-200 align-middle items-center border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-700'>
                       <input
-                        className='block w-full  lg:text-xl px-1 border-0 bg-gray-200 focus:ring-0 border-2 border-gray-200 focus:border-blue-700 '
+                        className='block w-full  text-lg px-1 border-0 bg-gray-200 focus:ring-0 border-0 border-gray-200 focus:ring-0 focus:border-blue-700 '
                         type={isPeak ? 'text' : 'password'}
                         name='password'
                         id='password'

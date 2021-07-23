@@ -33,7 +33,7 @@ const AddIncome = () => {
   }
 
   return (
-    <div className='p-7'>
+    <div className='p-7 container mx-auto'>
       <div className='mb-8'>
         <BackButton destination={'/dashboard'} />
       </div>
@@ -61,7 +61,7 @@ const AddIncome = () => {
       </form>
 
       {inputData.length === 0 ? (
-        <div>Kosong</div>
+        <div>Silahkan Isi Data</div>
       ) : (
         <div className='mt-2 mb-10'>
           <h2 className='text-lg font-bold text-gray-500'>Data Tersimpan</h2>
@@ -79,7 +79,7 @@ const AddIncome = () => {
       )}
 
       <div className='container grid-cols-1'>
-        <h2 className='text-2xl font-semibold text-center'>Rincian</h2>
+        <h2 className='text-2xl font-semibold text-center pb-8'>Rincian</h2>
         <form
           onSubmit={handleSaveSubmit}
           className='bg-white detail-form rounded-md shadow-md p-4 py-6'

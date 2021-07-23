@@ -13,9 +13,9 @@ import DetailPage from './pages/DetailPage'
 function App() {
   return (
     <Router>
-      <div className='App relative w-full '>
+      <div className='App relative w-full  '>
         <NavBar />
-        <main style={{}} className='bg-gray-200 h-auto'>
+        <main style={{}} className='bg-gray-200 h-full'>
           <Route path='/' component={HomeScreen} exact />
           <Route path='/login' component={LoginScreen} />
           <Route path='/dashboard' component={Dashboard} />

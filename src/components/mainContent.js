@@ -141,7 +141,7 @@ const MainContent = () => {
                   Yuk! Berdonasi
                 </h1>
 
-                <div className='flex mt-8'>
+                <div className='relative flex mt-8 h-full w-full items-center'>
                   <div className='mx-auto flex justify-center p-2 h-full w-full'>
                     <img
                       className='w-1/2 h-1/2 text-center'
@@ -149,22 +149,22 @@ const MainContent = () => {
                       alt='donation'
                     />
                   </div>
-                  <div className='w-full h-full'>
-                    <p className='text-white text-xs  lg:text-2xl'>
+                  <div className='relative w-full h-full px-7 '>
+                    <p className='text-white  text-2xl'>
                       Bersama kita dukung acara kajian ini agar lebih nyaman dan
                       terakomodasi.
                     </p>
                     <div className='grid grid-cols-2 mt-5 bg-pieIncome rounded p-2 shadow-md '>
                       <div className='flex justify-center align-middle items-center'>
-                        <h2 className='text-center text-white text-lg font-bold'>
+                        <h2 className='text-center text-white text-2xl font-bold'>
                           Andry Muldani
                         </h2>
                       </div>
                       <div className=''>
-                        <h2 className='flex-nowrap text-center text-white font-semibold'>
+                        <h2 className='flex-nowrap text-center text-white text-xl font-semibold'>
                           Bank BCA
                         </h2>
-                        <h2 className='text-center text-white font-semibold'>
+                        <h2 className='text-center text-white font-semibold text-xl'>
                           1973 xxxx xxx
                         </h2>
                       </div>
@@ -179,7 +179,7 @@ const MainContent = () => {
 
       {/* Small View */}
       <div className='lg:hidden'>
-        <div className='container relative bg-blue-700 h-auto mx-auto rounded-b-3xl rad py-2 pb-20 mb-4 '>
+        <div className='container bg-blue-700 h-auto mx-auto rounded-b-3xl rad py-2 pb-20 mb-4 '>
           <div className='ml-4 py-1'>
             <p className='text-sm text-white'>Halo, Selamat datang</p>
             <h2 className='font-bold text-2xl text-white'>Dompet Infaq</h2>
@@ -243,7 +243,7 @@ const MainContent = () => {
         </div>
 
         <div className='w-full h-auto bg-blue-700 pb-8'>
-          <div className='container p-5'>
+          <div className='container p-5 mx-auto'>
             <h1 className='text-center text-2xl text-white font-bold tracking-wider'>
               Yuk! Berdonasi
             </h1>
