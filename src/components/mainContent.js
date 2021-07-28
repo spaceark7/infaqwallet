@@ -4,35 +4,67 @@ import { PieChart } from 'react-minimal-pie-chart'
 import NumberFormat from 'react-number-format'
 import data from '../data'
 import CardHistory from './CardHistory'
+import axios from 'axios'
 
 const MainContent = () => {
   const [saldo, setSaldo] = useState(0)
   const [income, setIncome] = useState(0)
   const [outcome, setOutcome] = useState(0)
+  const [datum, setDatum] = useState([])
 
   useEffect(() => {
-    const count = () => {
+    const fetchData = async () => {
+      const { data } = await axios.get('/api/rincian')
+      setDatum(data)
+      countData(data)
+    }
+    const countData = (datum) => {
       let credit = 0
       let income = 0
       let outcome = 0
-      data.map((transaksi) => {
-        if (transaksi.jenis === 'pemasukan') {
-          income += transaksi.nominal
-          setIncome(income)
-        }
-        if (transaksi.jenis === 'pengeluaran') {
-          outcome += transaksi.nominal
-          setOutcome(outcome)
-        }
-        credit = income - outcome
+      datum.map((transactions) => {
+        console.log('transaksi banyak: ', transactions)
+        transactions.rincian.map((transaction) => {
+          console.log('transaksi: ', transaction)
+          if (transaction.jenis === 'pemasukan') {
+            income += transaction.nominal
+            setIncome(income)
+          } else {
+            outcome += transaction.nominal
+            setOutcome(outcome)
+          }
+          credit = income - outcome
+          setSaldo(credit)
+          return credit
+        })
+
         return credit
       })
-
-      return credit
     }
 
-    setSaldo(count())
-  }, [saldo, income, outcome])
+    fetchData()
+
+    // const count = () => {
+    //   let credit = 0
+    //   let income = 0
+    //   let outcome = 0
+    //   data.map((transaksi) => {
+
+    //     if (transaksi.rincianjenis === 'pemasukan') {
+    //       income += transaksi.nominal
+    //       setIncome(income)
+    //     }
+    //     if (transaksi.jenis === 'pengeluaran') {
+    //       outcome += transaksi.nominal
+    //       setOutcome(outcome)
+    //     }
+    //     credit = income - outcome
+    //     return credit
+    //   })
+
+    //   return credit
+    // }
+  }, [])
 
   const dataMock = [
     {

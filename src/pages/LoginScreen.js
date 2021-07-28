@@ -14,7 +14,7 @@ const LoginScreen = ({ history }) => {
 
   return (
     <>
-      <div style={{ height: '85vh' }} className='hidden lg:block h-auto w-full'>
+      <div className='hidden lg:block h-auto w-full'>
         <div className='bg-blue-700 h-full lg:flex lg:justify-center lg:align-middle lg:items-center'>
           <div className='container flex items-center mx-auto w-full h-full'>
             <div className='w-full  md:flex justify-center md:px-10 items-center container-sm md:container  h-full md:h-4/6 rounded-t-xl py-6   '>

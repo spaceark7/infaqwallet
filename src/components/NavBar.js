@@ -33,15 +33,21 @@ const NavBar = () => {
       <header className='sticky top-0 w-full bg-blue-700 h-16 lg:h-32 lg:px-6 z-10 '>
         <div className='container mx-auto flex h-full'>
           <div className='relative items-center align-middle mr-auto ml-3.5 flex'>
-            <img
-              className='object-contain lg:h-14 h-7 mr-2 fill-current text-white '
-              src='assets/icons/wallet.svg'
-              alt='wallet'
-            />
-            <h2 className=' text-white items-center align-middle lg:font-bold lg:text-xl'>
-              Dompet Infaq
-            </h2>
+            <Link
+              className='flex align-middle items-center justify-evenly'
+              to={'/'}
+            >
+              <img
+                className='object-contain lg:h-14 h-7 mr-2 fill-current text-white '
+                src='assets/icons/wallet.svg'
+                alt='wallet'
+              />
+              <h2 className=' text-white items-center align-middle lg:font-bold lg:text-xl'>
+                Dompet Infaq
+              </h2>
+            </Link>
           </div>
+
           <div className='hidden lg:grid  grid p-2 pr-4 grid-flow-col md:grid lg:space-x-12 md:space-x-7  lg:text-3xl'>
             <Link
               className='text-white flex justify-center items-center font-bold text-lg lg:text-2xl text-center w-full w-11/12 block menu-item'
